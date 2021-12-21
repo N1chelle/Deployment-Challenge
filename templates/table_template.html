@@ -1,0 +1,23 @@
+<h1 class="pt-5 pb-2">List of Games</h1>
+
+<p class="lead alert alert-warning">This is a list of all the games that are available on steam.</p>
+
+
+  <table class="table">
+      <tr>
+          <th>Name</th>
+          <th>Required Age</th>
+          <th>Is Free</th>
+          <th>Review Score</th>
+      </tr>
+
+      <!-- here is a for-loop to give us all the games -->
+      {% for game in games %}
+      <tr>
+          <td>{{ game.name }}</td>
+          <td>{{ game.required_age }}</td>
+          <td>{{ game.is_free }}</td>
+          <td>{{ game.review_score }}</td>
+      </tr>
+      {% endfor %}
+  </table>
