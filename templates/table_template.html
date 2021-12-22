@@ -1,23 +1,38 @@
-<h1 class="pt-5 pb-2">List of Games</h1>
+{% extends "base.html" %}
 
-<p class="lead alert alert-warning">This is a list of all the games that are available on steam.</p>
-
-
-  <table class="table">
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
       <tr>
-          <th>Name</th>
-          <th>Required Age</th>
-          <th>Is Free</th>
-          <th>Review Score</th>
+        <th>Name</th>
+        <th>Required_Age</th>
+        <th>Is Free</th>
+        <th>Review Score</th>
       </tr>
-
-      <!-- here is a for-loop to give us all the games -->
+    </thead>
+    <tbody>
       {% for game in games %}
-      <tr>
+        <tr>
           <td>{{ game.name }}</td>
           <td>{{ game.required_age }}</td>
           <td>{{ game.is_free }}</td>
           <td>{{ game.review_score }}</td>
-      </tr>
+        </tr>
       {% endfor %}
+    </tbody>
   </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          {searchable: false},
+          {searchable: false},
+          null],
+      });
+    });
+  </script>
+{% endblock %}
