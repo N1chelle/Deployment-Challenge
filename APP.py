@@ -17,7 +17,7 @@ class Gaming(db.Model):
     required_age = db.Column(db.Integer)
     is_free = db.Column(db.Integer)
     currency = db.Column(db.String)
-    final_formatted = db.Column(db.Float)
+    final = db.Column(db.Float)
     review_score = db.Column(db.Integer)
     
 
