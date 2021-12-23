@@ -7,6 +7,8 @@
         <th>Name</th>
         <th>Required_Age</th>
         <th>Is Free</th>
+        <th>Currency</th>
+        <th>Price</th>
         <th>Review Score</th>
       </tr>
     </thead>
@@ -16,6 +18,8 @@
           <td>{{ game.name }}</td>
           <td>{{ game.required_age }}</td>
           <td>{{ game.is_free }}</td>
+          <td>{{ game.currency }}</td>
+          <td>{{ game.final_formatted }}</td>
           <td>{{ game.review_score }}</td>
         </tr>
       {% endfor %}
@@ -31,7 +35,9 @@
           null,
           {searchable: false},
           {searchable: false},
-          null],
+          {orderable: false},
+          {searchable: false},
+          {searchable: false}],
       });
     });
   </script>
