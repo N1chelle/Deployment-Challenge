@@ -19,7 +19,7 @@
           <td>{{ game.required_age }}</td>
           <td>{{ game.is_free }}</td>
           <td>{{ game.currency }}</td>
-          <td>{{ game.final_formatted }}</td>
+          <td>{{ game.final }}</td>
           <td>{{ game.review_score }}</td>
         </tr>
       {% endfor %}
@@ -35,7 +35,7 @@
           null,
           {searchable: false},
           {searchable: false},
-          {orderable: false},
+          null,
           {searchable: false},
           {searchable: false}],
       });
