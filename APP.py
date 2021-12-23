@@ -16,7 +16,10 @@ class Gaming(db.Model):
     name = db.Column(db.String,primary_key=True)
     required_age = db.Column(db.Integer)
     is_free = db.Column(db.Integer)
+    currency = db.Column(db.String)
+    final_formatted = db.Column(db.Float)
     review_score = db.Column(db.Integer)
+    
 
 
 @app.route('/')
