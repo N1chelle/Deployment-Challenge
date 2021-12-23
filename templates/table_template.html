@@ -4,6 +4,7 @@
   <table id="data" class="table table-striped">
     <thead>
       <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Required_Age</th>
         <th>Is Free</th>
@@ -15,6 +16,7 @@
     <tbody>
       {% for game in games %}
         <tr>
+          <td>{{ game.index }}</td>
           <td>{{ game.name }}</td>
           <td>{{ game.required_age }}</td>
           <td>{{ game.is_free }}</td>
@@ -32,6 +34,7 @@
     $(document).ready(function () {
       $('#data').DataTable({
         columns: [
+          null,
           null,
           {searchable: false},
           {searchable: false},

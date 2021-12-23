@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.automap import automap_base
 import sqlalchemy
-from sqlalchemy.sql.schema import PrimaryKeyConstraint
+from sqlalchemy.sql.schema import Index, PrimaryKeyConstraint
 
 app = Flask(__name__)
 
@@ -13,7 +13,8 @@ db = SQLAlchemy(app)
 
 class Gaming(db.Model):
     __tablename__ = 'Gaming_Data'
-    name = db.Column(db.String,primary_key=True)
+    index = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
     required_age = db.Column(db.Integer)
     is_free = db.Column(db.Integer)
     currency = db.Column(db.String)
