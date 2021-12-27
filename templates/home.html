@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Analytics</title>
+</head>
+    <body>
+        <h4>The Mission</h4>
+            <p>Your games obsessed manager has a nice little side project for you: vizualize some interesting aspects about his poorly scraped steam data. He's managed to compile a json file containing data on some 1000 odd games sold on the popular digital games storefront steam.
+
+            
+            He'd like you to show him a proof of concept to translate data, visualize said data and deploy a little server so he can see if it is worth investing more time in.
+            </p>
+
+        <h5>Must-have features</h5>
+            <p> 1. At least one visualization on the data.<br>
+
+                2. Deployment using Flask+docker+heroku.<br>
+
+                3. Json parsing to SQL data (you can use any number of layers in between, e.g. json > python objects > SQL data)
+                   any SQL database framework.<br>
+
+                4. Data retrieval from SQL database.<br>
+            </p>
+    </body>
+</html>
+{% endblock %}

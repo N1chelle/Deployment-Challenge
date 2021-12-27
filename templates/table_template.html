@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Required_Age</th>
+        <th>Is Free</th>
+        <th>Currency</th>
+        <th>Price</th>
+        <th>Total Reviews</th>
+        <th>Review Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games %}
+        <tr>
+          <td>{{ game.index }}</td>
+          <td>{{ game.name }}</td>
+          <td>{{ game.required_age }}</td>
+          <td>{{ game.is_free }}</td>
+          <td>{{ game.currency }}</td>
+          <td>{{ game.final }}</td>
+          <td>{{ game.total_reviews }}</td>
+          <td>{{ game.review_score }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          null,
+          {searchable: false},
+          {searchable: false},
+          null,
+          {searchable: false},
+          {searchable: false},
+          {searchable: false}],
+      });
+    });
+  </script>
+{% endblock %}
