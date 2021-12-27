@@ -6,6 +6,7 @@ from sqlalchemy.sql.schema import Index, PrimaryKeyConstraint
 
 
 
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///game.db'
@@ -26,6 +27,12 @@ class Gaming(db.Model):
     
 
 
+
+@app.route('/home')
+def home():
+
+    return render_template('home.html')
+
 @app.route('/')
 def data():
     try:
@@ -40,8 +47,14 @@ def data():
 
 @app.route('/visuals')
 def visuals():
-    
-    return render_template('visuals.py')
+    # engine = sqlalchemy.create_engine('sqlite:///game.db')
+    # with engine.connect() as connection:
+    #   df = pd.read_sql("game", connection)
+    #   plt.figure(figsize=(12,8))
+    #   g = df['is_free'].value_counts().plot(kind='pie', legend=True, autopct='%1.1f%%',explode=(0, 0.2), shadow=True, startangle=0)
+    #   #img = io.BytesIO()
+    #   g.savefig('plot.png')
+    return render_template('visuals.html')
 
 
 
