@@ -28,12 +28,12 @@ class Gaming(db.Model):
 
 
 
-@app.route('/home')
+@app.route('/')
 def home():
 
     return render_template('home.html')
 
-@app.route('/')
+@app.route('/data')
 def data():
     try:
         games = Gaming.query.all()
