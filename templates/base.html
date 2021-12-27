@@ -6,8 +6,24 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Steam Game Analysis</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('data') }}">Data <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('visuals') }}">Visuals</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-      <h1>List of Games</h1>
+      <h1>Steam Games Data</h1>
       <hr>
       {% block content %}{% endblock %}
     </div>

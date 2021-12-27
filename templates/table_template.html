@@ -10,6 +10,7 @@
         <th>Is Free</th>
         <th>Currency</th>
         <th>Price</th>
+        <th>Total Reviews</th>
         <th>Review Score</th>
       </tr>
     </thead>
@@ -22,6 +23,7 @@
           <td>{{ game.is_free }}</td>
           <td>{{ game.currency }}</td>
           <td>{{ game.final }}</td>
+          <td>{{ game.total_reviews }}</td>
           <td>{{ game.review_score }}</td>
         </tr>
       {% endfor %}
@@ -39,6 +41,7 @@
           {searchable: false},
           {searchable: false},
           null,
+          {searchable: false},
           {searchable: false},
           {searchable: false}],
       });

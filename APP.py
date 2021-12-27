@@ -4,6 +4,8 @@ from sqlalchemy.ext.automap import automap_base
 import sqlalchemy
 from sqlalchemy.sql.schema import Index, PrimaryKeyConstraint
 
+
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///game.db'
@@ -19,12 +21,13 @@ class Gaming(db.Model):
     is_free = db.Column(db.Integer)
     currency = db.Column(db.String)
     final = db.Column(db.Float)
+    total_reviews = db.Column(db.Integer)
     review_score = db.Column(db.Integer)
     
 
 
 @app.route('/')
-def steam_games():
+def data():
     try:
         games = Gaming.query.all()
         return render_template('table_template.html', games=games)
@@ -34,6 +37,12 @@ def steam_games():
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
+
+@app.route('/visuals')
+def visuals():
+    
+    return render_template('visuals.py')
+
 
 
 if __name__ == '__main__':
