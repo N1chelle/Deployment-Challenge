@@ -5,6 +5,7 @@
     <img src="https://stealthoptional.com/wp-content/uploads/2021/06/steam.jpg" alt="Steam Games" width="800" height="300" /><br><br>
 </center>
 
+
 ### The Mission
 
 Your games obsessed manager has a nice little side project for you: vizualize some interesting aspects about his poorly scraped steam data. He's managed to compile a json file containing data on some 1000 odd games sold on the popular digital games storefront steam.
