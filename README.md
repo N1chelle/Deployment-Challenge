@@ -2,7 +2,7 @@
 
 
 <center>
-    <img src="https://stealthoptional.com/wp-content/uploads/2021/06/steam.jpg" alt="Steam Games" width="800" height="300" /><br><br>
+    <img src="https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg" alt="Steam Games" width="800" height="300" /><br><br>
 </center>
 
 
